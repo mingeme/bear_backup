@@ -99,7 +99,7 @@ class Note(object):
         """
         if filename is None:
             filename = self.filename()
-        filename = pathlib.Path(filename).with_suffix(".bearnote")
+        filename = pathlib.Path(filename).with_suffix(".bear")
         zip_file = zipfile.ZipFile(str(filename), "w",
                                compression=zipfile.ZIP_DEFLATED)
         # Add info.json
