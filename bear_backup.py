@@ -71,9 +71,9 @@ class Note(object):
         extension"""
         filename = self.title()
         # Strip anything that isn't alphanumeric or spaces
-        filename = re.sub('[^\w\s]+', '_', filename)
+        filename = re.sub('[^\\w\\s]+', '_', filename)
         # Collapse spaces
-        filename = re.sub('\s+', ' ', filename)
+        filename = re.sub('\\s+', ' ', filename)
         return filename
 
     def full_filename(self):
