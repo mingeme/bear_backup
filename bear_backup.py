@@ -77,9 +77,9 @@ class Note(object):
         return filename
 
     def full_filename(self):
-        """Gets the full filename of the note on disk, including the .bearnote
+        """Gets the full filename of the note on disk, including the .bear
         extension"""
-        return pathlib.Path(self.filename()).with_suffix(".bearnote")
+        return pathlib.Path(self.filename()).with_suffix(".bear")
 
     def existing_file_is_newer(self):
         filename = self.full_filename()
@@ -180,7 +180,7 @@ if __name__ == '__main__':
 
     if args.remove:
         keep_notes = {str(note.full_filename()) for note in notes}
-        all_notes = set(glob.glob("*.bearnote"))
+        all_notes = set(glob.glob("*.bear"))
         delete_notes = all_notes - keep_notes
         for note in delete_notes:
             if args.dry_run:
